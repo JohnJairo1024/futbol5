@@ -9,7 +9,7 @@ body {
     border-top: 6px solid #343434;
 }
 #outerheader {
-    background: url("../images/pattern.png") repeat scroll 0 0 transparent;
+    background: url("../images/pattern6.jpg") repeat scroll 0 0 transparent;
     border-bottom: 1px solid #FFFFFF;
 }
 #top {
@@ -398,7 +398,7 @@ input.searchbutton:hover {
     color: #777777;
 }
 #footersection {
-    background: url("../images/pattern.png") repeat scroll 0 0 transparent;
+    background: url("../images/pattern6.jpg") repeat scroll 0 0 transparent;
     border-top: 1px solid #FFFFFF;
     color: #888888;
 }

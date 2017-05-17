@@ -8,7 +8,7 @@ CHANGE COLOR STYLE
 
 body {color:#888;}
 #bodychild {border-top: 6px solid #343434;}
-#outerheader{background:url(../images/pattern.png) repeat ; border-bottom:solid 1px #fff;}
+#outerheader{background:url(../images/pattern6.jpg) repeat ; border-bottom:solid 1px #fff;}
 #top{background: url(../images/opacity-logomenu.png) repeat-x left bottom; border-top:solid 1px #383838; border-bottom:solid 1px #050505}
 
 
@@ -302,7 +302,7 @@ input.searchbutton:hover{-ms-filter: "progid:DXImageTransform.Microsoft.gradient
 
 
 /*============================================== FOOTER SIDEBAR SECTION ==============================================*/
-#footersection{ background:url(../images/pattern.png) repeat; border-top:1px solid #fff; color:#888;}
+#footersection{ background:url(../images/pattern6.jpg) repeat; border-top:1px solid #fff; color:#888;}
 #outerfootersidebar{border-bottom:solid 1px #000000;}
 #footersidebar .widget-title{color:#fff; border-bottom:solid 1px #272727}
 #footersidebar li a, #footersidebar li a:visited{color:#888}
