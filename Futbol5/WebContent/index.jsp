@@ -81,7 +81,14 @@
 					<header id="top">
 						<div class="container">
 							<div id="container-logomenu" class="twelve columns">
-								<span class="logo-light"></span>
+								<span class="logo-light"> <a
+									href="http://www.w3.org/html/logo/"> <img
+										src="images/icom.png" width="300" height="200"
+										alt="HTML5 Powered with CSS3 / Styling, and Semantics"
+										title="HTML5 Powered with CSS3 / Styling, and Semantics">
+								</a>
+
+								</span>
 								<div id="logo" class="three columns alpha"></div>
 								<section id="navigation" class="nine columns omega">
 									<nav id="nav-wrap">
@@ -93,6 +100,9 @@
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"
 												style="display: none"><a target="_blank"
 												id="misreservas" href="misreservas.jsp">Mis reservas</a></li>
+											<li id="login"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a
+												target="_blank" class="login" href="nosotros.html">Nosotros</a></li>
 											<li id="login"
 												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a
 												target="_blank" id="window" class="login" href="login.jsp">Ingresar</a></li>
@@ -277,6 +287,14 @@
 																lat : 4.766850,
 																lng : -74.016732
 															};
+															var pos5 = {
+																lat : 4.673770,
+																lng : -74.051451
+															};
+															var pos6 = {
+																lat : 4.592443,
+																lng : -74.168789
+															};
 
 															var image = {
 																url : 'images/balon4.png',
@@ -293,7 +311,6 @@
 																anchor : new google.maps.Point(
 																		25, 60)
 															};
-
 															var image2 = {
 																url : 'images/balon6.png',
 																size : new google.maps.Size(
@@ -301,7 +318,6 @@
 																anchor : new google.maps.Point(
 																		25, 60)
 															};
-
 															var image3 = {
 																url : 'images/balon7.png',
 																size : new google.maps.Size(
@@ -309,10 +325,23 @@
 																anchor : new google.maps.Point(
 																		25, 60)
 															};
-
 															var image4 = {
-																url : 'images/balon.png',        							
-																
+																url : 'images/balon.png',
+
+															};
+															var image5 = {
+																url : 'images/balon8.png',
+																size : new google.maps.Size(
+																		50, 60),
+																anchor : new google.maps.Point(
+																		25, 60)
+															};
+															var image6 = {
+																url : 'images/balon9.png',
+																size : new google.maps.Size(
+																		50, 60),
+																anchor : new google.maps.Point(
+																		25, 60)
 															};
 
 															var marker = new google.maps.Marker(
@@ -362,6 +391,26 @@
 																		title : 'Arsenal',
 																		zoom : 15,
 																		icon : image4
+																	});
+															var marker5 = new google.maps.Marker(
+																	{
+																		position : pos5,
+																		map : map,
+																		draggable : true,
+																		animation : google.maps.Animation.DROP,
+																		title : 'Barcelona',
+																		zoom : 15,
+																		icon : image5
+																	});
+															var marker5 = new google.maps.Marker(
+																	{
+																		position : pos6,
+																		map : map,
+																		draggable : true,
+																		animation : google.maps.Animation.DROP,
+																		title : 'Barcelona',
+																		zoom : 15,
+																		icon : image6
 																	});
 
 															function addMarker(

@@ -42,7 +42,7 @@
                         <thead>
                             <tr>
                                 <th class="head0">Nombre de reserva</th>
-                                <th class="head1">Sala</th>
+                                <th class="head1">Sede</th>
                                 <th class="head0">Cancha</th>
                                 <th class="head1">Horario</th>
                                 <th class="head0">Fecha</th>
