@@ -10,7 +10,7 @@
 <jsp:setProperty name="oUsuario" property="password" value="<%=request.getParameter(&quot;password&quot;)%>"/>
 <jsp:setProperty name="oUsuario" property="apellido" value="<%=request.getParameter(&quot;apellido&quot;) %>"/>
 <jsp:setProperty name="oUsuario" property="nombre" value="<%=request.getParameter(&quot;nombre&quot;) %>"/>
-<jsp:setProperty name="oUsuario" property="tipo" value="Espectador"/>
+<jsp:setProperty name="oUsuario" property="tipo" value="Usuario"/>
 <jsp:setProperty name="oUsuario" property="DNI" value="<%=request.getParameter(&quot;dni&quot;) %>"/>
 
 
@@ -22,7 +22,7 @@
 
 <%
     oDatosEspectador = new DatosUsuario();
-    Espectador registrado=oDatosEspectador.BuscarEspectadorNombreUsuario(oUsuario.getUsuario());
+    Usuario registrado=oDatosEspectador.BuscarEspectadorNombreUsuario(oUsuario.getUsuario());
    
     if (registrado==null)
     {
