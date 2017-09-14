@@ -6,8 +6,8 @@
 
 <jsp:useBean id="oAdmin" class="Entidades.Usuario" scope="session"/>
 
-<jsp:setProperty name="oAdmin" property="usuario" value="<%=request.getParameter(&quot;Usuario&quot;)%>"/>
-<jsp:setProperty name="oAdmin" property="password" value="<%=request.getParameter(&quot;Password&quot;)%>"/>
+<jsp:setProperty name="oAdmin" property="usuario" value="<%=request.getParameter(\"Usuario\")%>"/>
+<jsp:setProperty name="oAdmin" property="password" value="<%=request.getParameter(\"Password\")%>"/>
 
 <%! DatosUsuario oDatosEspectador;
     DatosReservas oDatosReservas;

@@ -6,7 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <jsp:useBean id="oHorario" class="Entidades.Horario" scope="page"/>
-<jsp:setProperty name="oHorario" property="precio" value="<%= Integer.parseInt(request.getParameter(&quot;precio&quot;))%>"/>
+<jsp:setProperty name="oHorario" property="precio" value="<%= Integer.parseInt(request.getParameter(\"precio\"))%>"/>
 
 
 

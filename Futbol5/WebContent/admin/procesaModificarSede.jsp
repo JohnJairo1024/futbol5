@@ -5,8 +5,8 @@
 
 <jsp:useBean id="oSede" class="Entidades.Sede" scope="page"/>
 
-<jsp:setProperty name="oSede" property="idSede" value="<%=Integer.parseInt(request.getParameter(&quot;idsede&quot;)) %>"/>
-<jsp:setProperty name="oSede" property="nombre" value="<%=request.getParameter(&quot;nombre&quot;)%>"/>
+<jsp:setProperty name="oSede" property="idSede" value="<%=Integer.parseInt(request.getParameter(\"idsede\")) %>"/>
+<jsp:setProperty name="oSede" property="nombre" value="<%=request.getParameter(\"nombre\")%>"/>
 
 
 <%!    

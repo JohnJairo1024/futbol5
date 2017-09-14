@@ -6,11 +6,11 @@
 <jsp:useBean id="oCancha" class="Entidades.Cancha" scope="page"/>
 
 <%-- <jsp:setProperty name="oCancha" property="nombre" value="<%=request.getParameter("nombre")%>"/> --%>
-<jsp:setProperty name="oCancha" property="nombre" value="<%=request.getParameter(&quot;nombre&quot;)%>"/>
-<jsp:setProperty name="oCancha" property="poster" value="<%=request.getParameter(&quot;poster&quot;)%>"/>
-<jsp:setProperty name="oCancha" property="descripcion" value="<%=request.getParameter(&quot;descripcion&quot;) %>"/>
-<jsp:setProperty name="oCancha" property="idCancha" value="<%= Integer.parseInt(request.getParameter(&quot;idcancha&quot;))%>"/>
-<jsp:setProperty name="oCancha" property="ubicacion" value="<%=request.getParameter(&quot;ubicacion&quot;) %>"/>
+<jsp:setProperty name="oCancha" property="nombre" value="<%=request.getParameter(\"nombre\")%>"/>
+<jsp:setProperty name="oCancha" property="poster" value="<%=request.getParameter(\"poster\")%>"/>
+<jsp:setProperty name="oCancha" property="descripcion" value="<%=request.getParameter(\"descripcion\") %>"/>
+<jsp:setProperty name="oCancha" property="idCancha" value="<%= Integer.parseInt(request.getParameter(\"idcancha\"))%>"/>
+<jsp:setProperty name="oCancha" property="ubicacion" value="<%=request.getParameter(\"ubicacion\") %>"/>
 
 
 <%!    

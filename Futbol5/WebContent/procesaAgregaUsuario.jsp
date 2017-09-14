@@ -6,12 +6,12 @@
 
 <jsp:useBean id="oUsuario" class="Entidades.Usuario" scope="page"/>
 
-<jsp:setProperty name="oUsuario" property="usuario" value="<%=request.getParameter(&quot;usuario&quot;)%>"/>
-<jsp:setProperty name="oUsuario" property="password" value="<%=request.getParameter(&quot;password&quot;)%>"/>
-<jsp:setProperty name="oUsuario" property="apellido" value="<%=request.getParameter(&quot;apellido&quot;) %>"/>
-<jsp:setProperty name="oUsuario" property="nombre" value="<%=request.getParameter(&quot;nombre&quot;) %>"/>
+<jsp:setProperty name="oUsuario" property="usuario" value="<%=request.getParameter(\"usuario\")%>"/>
+<jsp:setProperty name="oUsuario" property="password" value="<%=request.getParameter(\"password\")%>"/>
+<jsp:setProperty name="oUsuario" property="apellido" value="<%=request.getParameter(\"apellido\") %>"/>
+<jsp:setProperty name="oUsuario" property="nombre" value="<%=request.getParameter(\"nombre\") %>"/>
 <jsp:setProperty name="oUsuario" property="tipo" value="Usuario"/>
-<jsp:setProperty name="oUsuario" property="DNI" value="<%=request.getParameter(&quot;dni&quot;) %>"/>
+<jsp:setProperty name="oUsuario" property="DNI" value="<%=request.getParameter(\"dni\") %>"/>
 
 
 <%!

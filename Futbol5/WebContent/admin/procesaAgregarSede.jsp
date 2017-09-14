@@ -5,9 +5,9 @@
 
 <jsp:useBean id="oSede" class="Entidades.Sede" scope="page"/>
 
-<jsp:setProperty name="oSede" property="nombre" value="<%=request.getParameter(&quot;nombre&quot;)%>"/>
-<jsp:setProperty name="oSede" property="zona" value="<%=Integer.parseInt(request.getParameter(&quot;zona&quot;)) %>"/>
-<jsp:setProperty name="oSede" property="punto" value="<%=Integer.parseInt(request.getParameter(&quot;punto&quot;)) %>"/>
+<jsp:setProperty name="oSede" property="nombre" value="<%=request.getParameter(\"nombre\")%>"/>
+<jsp:setProperty name="oSede" property="zona" value="<%=Integer.parseInt(request.getParameter(\"zona\")) %>"/>
+<jsp:setProperty name="oSede" property="punto" value="<%=Integer.parseInt(request.getParameter(\"punto\")) %>"/>
 
 
 <%!    
