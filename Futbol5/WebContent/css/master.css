@@ -40,6 +40,9 @@ table {
 * {
 	margin:0;
 	padding:0;
+	-webkit-box-sizing: unset;
+    -moz-box-sizing: unset;
+    box-sizing: unset;
 }
 *:focus {
 	outline:none; /* removes ugly dotted border but may make template more unsuable, up to you
