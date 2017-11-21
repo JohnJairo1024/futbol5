@@ -6,7 +6,6 @@
 <%@page import="java.util.Enumeration"%>
 <%@page import="java.util.Hashtable"%>
 <%@page import="Datos.DatosCancha"%>
-
 <%
 	DatosCancha oDatosCancha = new DatosCancha();
 	Hashtable ListaCancha = oDatosCancha.ListarCancha();
@@ -14,63 +13,8 @@
 	HttpSession sesion = request.getSession();
 	Object user = sesion.getAttribute("Logueado");
 %>
+<jsp:include page="header.jsp" />
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Canchas Sinteticas</title>
-
-<link media="screen, all" type="text/css" href="css/master.css"
-	rel="stylesheet" />
-<link media="screen, all" type="text/css"
-	href="css/skeleton.css?ver=3.4.2" rel="stylesheet" />
-<link media="screen, all" type="text/css" href="css/style_window.css"
-	rel="stylesheet" />
-<link id="googleFonts-css" media="all" type="text/css"
-	href="http://fonts.googleapis.com/css?family=Oswald%3A400%2C+300%2C+700&ver=3.4.2"
-	rel="stylesheet">
-<link id="general-css-css" media="all" type="text/css"
-	href="css/style2.css?ver=3.4.2" rel="stylesheet" />
-<link id="prettyPhoto-css-css" media="screen, all" type="text/css"
-	href="css/prettyPhoto.css?ver=3.4.2" rel="stylesheet" />
-<link id="flexslider-css-css" media="screen, all" type="text/css"
-	href="css/flexslider.css?ver=3.4.2" rel="stylesheet" />
-<link id="color-css-css" media="screen, all" type="text/css"
-	href="css/color.css?ver=3.4.2" rel="stylesheet" />
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.form.js"
-	type="text/javascript"></script>
-<script type="text/javascript"
-	src="js/plugins/jquery.smartWizard-2.0.min.js"></script>
-<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/error.js"></script>
-<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="js/fancy.js"></script>
-<script type="text/javascript" src="js/function_wizard.js"></script>
-<script type="text/javascript" src="js/fancyreservas.js"></script>
-
-<!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
-
-
-<style>
-#map {
-	height: 100%;
-}
-</style>
-
-
-</head>
-<body>
 	<div id="bodychild">
 		<div id="outercontainer">
 
@@ -547,40 +491,4 @@
 	</div>
 	<!-- end outercontainer -->
 
-
-
-	<!-- Hook Flexslider -->
-	<script type="text/javascript">
-		function cargaIndex() {
-			$(document).ready(function() {
-				jQuery('.flexslider').flexslider({
-					animation : "fade",
-					animationDuration : 600,
-					directionNav : false,
-					controlNav : true
-				});
-
-			});
-
-			$(document).ready(function() {
-				$('#window').fancy();
-				$('#trailer').fancy();
-				$('#reserva').function_wizard();
-				$('#misreservas').fancyreservas();
-			})
-
-			$(document).ready(function() {
-				$('#salir').click(function(e) {
-					var url = $(this).attr('href');
-					$('#bodychild').load(url);
-					e.preventDefault();
-				})
-			});
-		}
-		cargaIndex();
-	</script>
-
-
-
-</body>
-</html>
+<jsp:include page="footer.jsp" />
