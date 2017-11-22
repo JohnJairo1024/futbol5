@@ -13,202 +13,85 @@
 	HttpSession sesion = request.getSession();
 	Object user = sesion.getAttribute("Logueado");
 %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<jsp:include page="header.jsp" />
 
-	<title>PisoClub</title>
+	<section class="content-slider">
+		<h1 class="welcome">
+			Bienvenido a Canchas Sinteticas de Futbol <br>
+			<span>Aquí podras reservar de forma on-line</span>
+		</h1>
+		<!-- SLIDER -->
+		<div id="outerslider">
+			<div id="slidercontainer">
+				<section id="slider">
+					<div id="slideritems" class="flexslider">
+						<ul class="slides">
+							<li>
+								<img src="images/slide1.jpg" alt="">
+								<div class="flex-caption">
+									<h1>Sede Compensar</h1>
+								</div>
+							</li>
+							<li>
+								<img src="images/slide2.jpg" alt="">
+								<div class="flex-caption">
+									<h1>Sede Norte</h1>
+								</div>
+							</li>
+							<li>
+								<img src="images/slide3.jpg" alt="">
+								<div class="flex-caption">
+									<h1>Sede Sur</h1>
+								</div>
+							</li>
+							<li>
+								<img src="images/slide4.jpg" alt="">
+								<div class="flex-caption">
+									<h1>Sede Americas</h1>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div id="slidershadow"></div>
+				</section>
+			</div>
+		</div>
+		<!-- END SLIDER -->
+	</section>
 
-	<link media="screen, all" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link media="screen, all" type="text/css" href="css/master.css" rel="stylesheet" />
-	<link media="screen, all" type="text/css" href="css/skeleton.css?ver=3.4.2" rel="stylesheet" />
-	<link id="general-css-css" media="all" type="text/css" href="css/style2.css?ver=3.4.2" rel="stylesheet" />
-	<link id="prettyPhoto-css-css" media="screen, all" type="text/css" href="css/prettyPhoto.css?ver=3.4.2" rel="stylesheet" />
-	<link id="flexslider-css-css" media="screen, all" type="text/css" href="css/flexslider.css?ver=3.4.2" rel="stylesheet" />
-	<link id="color-css-css" media="screen, all" type="text/css" href="css/color.css?ver=3.4.2" rel="stylesheet" />
-
-	<style>
-	#map {
-		height: 100%;
-	}
-	</style>
-
-</head>
-<body>
-
-
+	<section class="container">
+		<aside>
+			<div class="intro">
+				<h1>Estos son algunas de las canchas que podrás reservar.</h1>
+				<p>Es la manera más facil de poder reservar, solo eliges la canchas haces clic en reservar , elegis tu lugar y confirmas , y todo listo para disfrutar.</p>
+			</div>
+			<div class="intro">
+				<p>&nbsp;</p>
+			</div>
+			<ul class="soccer-fields">
+				<%
+					while (eCancha.hasMoreElements()) {
+						Cancha aux = (Cancha) eCancha.nextElement();
+				%>
+				<li>
+					<img src="<%=aux.getPoster()%>" alt="">
+					<h4><%=aux.getNombre()%></h4>
+					<hr>
+					<p><%=aux.getUbicacion()%></p>
+					<a id="reserva" href="reserva.jsp?id=<%=aux.getIdCancha()%>" class="button">Reservar</a>
+				</li>
+				<%
+					}
+				%>
+			</ul>
+		</aside>
+	</section>
 
 	<div id="bodychild">
 		<div id="outercontainer">
 
-			<!-- HEADER -->
-
-			<div id="outerheader">
-				<div class="header-bglight">
-					<header id="top">
-						<div class="container">
-							<div id="container-logomenu" class="twelve columns">
-								<span class="logo-light"> <a
-									href="http://www.w3.org/html/logo/"> <img
-										src="images/icom.png" width="300" height="200"
-										alt="HTML5 Powered with CSS3 / Styling, and Semantics"
-										title="HTML5 Powered with CSS3 / Styling, and Semantics">
-								</a>
-
-								</span>
-								<div id="logo" class="three columns alpha"></div>
-								<section id="navigation" class="nine columns omega">
-									<nav id="nav-wrap">
-										<ul id="topnav" class="sf-menu">
-											<li id="menu-item-664"
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a
-												target="_blank" id="userLogueado"></a></li>
-											<li id="reservas"
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"
-												style="display: none"><a target="_blank"
-												id="misreservas" href="misreservas.jsp">Mis reservas</a></li>
-											<li id="login"
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a
-												target="_blank" class="login" href="nosotros.html">Nosotros</a></li>
-											<li id="login"
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a
-												target="_blank" id="window" class="login" href="login.jsp">Ingresar</a></li>
-											<li id="registrarme"
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a
-												target="_blank" id="window" href="registrarme.html">Registrarme</a></li>
-											<li id=""
-												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a
-												target="_blank" href="Logout.jsp" id="salir"></a></li>
-										</ul>
-									</nav>
-									<!-- nav -->
-									<div class="clear"></div>
-								</section>
-								<div class="clear"></div>
-							</div>
-						</div>
-					</header>
-					<div id="headertext">
-						<div class="container">
-							<div class="headertitle">
-								<h1 class="pagetitle">Bienvenido a Canchas Sinteticas de
-									Futbol</h1>
-								<span class="pagedesc">Aquí podras reservar de forma
-									on-line</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- SLIDER -->
-				<div id="outerslider">
-					<div id="slidercontainer">
-						<section id="slider">
-							<div id="slideritems" class="flexslider">
-								<ul class="slides">
-									<li><img src="images/slide1.jpg" alt="">
-										<div class="flex-caption">
-											<div class="slidertext">
-												<h1>Sede Compensar</h1>
-											</div>
-										</div></li>
-									<li><img src="images/slide2.jpg" alt="">
-										<div class="flex-caption">
-											<div class="slidertext">
-												<h1>Sede Norte</h1>
-											</div>
-										</div></li>
-									<li><img src="images/slide3.jpg" alt="">
-										<div class="flex-caption">
-											<div class="slidertext">
-												<h1>Sede Sur</h1>
-											</div>
-										</div></li>
-									<li><img src="images/slide4.jpg" alt="">
-										<div class="flex-caption">
-											<div class="slidertext">
-												<h1>Sede Americas</h1>
-											</div>
-										</div></li>
-								</ul>
-							</div>
-							<div id="slidershadow"></div>
-						</section>
-					</div>
-				</div>
-				<!-- END SLIDER -->
-
-			</div>
-			<!-- END HEADER -->
-
-			<!-- MAIN CONTENT -->
-			<div id="outermain" class="inner">
-				<div class="container">
-					<section id="maincontent" class="twelve columns">
-						<div id="post-94"
-							class="post-94 page type-page status-publish hentry">
-							<div class="entry-content">
-								<div class="highlight-content">
-									<div class="highlight-container">
-										<h1>Estos son algunas de las canchas que podrás reservar.</h1>
-										<p>
-											<span>Es la manera más facil de poder reservar, solo
-												eliges la canchas haces clic en reservar , elegis tu lugar y
-												confirmas , y todo listo para disfrutar.</span>
-										</p>
-									</div>
-								</div>
-								<div class="separator">
-									<div></div>
-								</div>
-								<%
-									while (eCancha.hasMoreElements()) {
-										Cancha aux = (Cancha) eCancha.nextElement();
-								%>
-								<div class="boxed-container">
-									<div class="boxed three columns alpha">
-										<div class="boxed-content">
-											<a id="trailer"
-												href="trailer.jsp?idvideo=<%=aux.getIdVideo()%>"> <img
-												height="135" src="<%=aux.getPoster()%>" alt=""
-												class="imgopacity"></a>
-											<h4 class="titleUppercase"><%=aux.getNombre()%></h4>
-											<div class="sep">
-												<span class="sep2"></span>
-											</div>
-											<p>
-												<%=aux.getUbicacion()%>
-											</p>
-											<a id="reserva" href="reserva.jsp?id=<%=aux.getIdCancha()%>"
-												class="button">Reservar</a>
-										</div>
-										<div class="shadow-220"></div>
-									</div>
-								</div>
-								<%
-									}
-								%>
 
 
-
-								<div class="clear"></div>
-
-								<div class="separator line">
-									<div></div>
-								</div>
-							</div>
-
-						</div>
-
-
-						<div class="clear"></div>
-						<!-- clear float -->
-					</section>
-					<!-- maincontent -->
-				</div>
-			</div>
 
 
 
@@ -456,7 +339,7 @@
 
 							<script
 								src="https://maps.googleapis.com/maps/api/js?key= AIzaSyBS0zuLmLKaB_9hJ_2GCuBwrY10js68UTM &amp;callback=initMap">
-								
+
 							</script>
 
 						</div>

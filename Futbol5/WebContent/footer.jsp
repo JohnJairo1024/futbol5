@@ -1,4 +1,4 @@
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jquery.form.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/plugins/jquery.smartWizard-2.0.min.js"></script>
@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="js/fancy.js"></script>
 	<script type="text/javascript" src="js/function_wizard.js"></script>
 	<script type="text/javascript" src="js/fancyreservas.js"></script>
-	
+
 	<!-- Hook Flexslider -->
 	<script type="text/javascript">
 		function cargaIndex() {
