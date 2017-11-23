@@ -1,6 +1,6 @@
 // JavaScript Document
 jQuery.fn.fancyreservas=function(){
-$(this).live('click',function(e) {
+$(this).on('click',function(e) {
 if (!$('#popup1').length)
 {
     

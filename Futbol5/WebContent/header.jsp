@@ -17,13 +17,12 @@
 	</style>
 
 	<script>
-		function checkImage(e){
-			jQuery(e).attr("src","http://via.placeholder.com/120x120");
-		};
+		var URL_BASE = 'http://localhost:8080/Futbol5/';
 	</script>
 
 </head>
 <body>
+	<div id="loader"><img src="images/loader.gif"></div>
 	<header>
 		<nav class="navbar">
 		  	<div class="container-fluid">
@@ -39,7 +38,7 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      	<ul class="nav navbar-nav">
 						<li><a href="#">Nosotros</a></li>
-						<li><a id="window" class="login" href="login.jsp">Ingresar</a></li>
+						<li><a class="btn-login" href="#">Ingresar</a></li>
 						<li><a href="#">Registrarme</a></li>
 			      	</ul>
 			    </div>

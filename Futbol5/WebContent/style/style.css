@@ -4,6 +4,26 @@ body {
   margin: 0;
   padding: 0;
 }
+.btn-submit{ background-color: #007576; color: #FFF; }
+.btn-submit:hover, .btn-submit:active, .btn-submit:link, .btn-submit:focus{ color: #FFF; }
+
+#loader{
+    background: rgb(255,255,255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: block;
+}
+#loader img{
+    width: 150px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -75px;
+}
 
 header, section, aside, footer{ display: block; }
 
@@ -35,7 +55,8 @@ section.content-slider{
 }
 section.content-slider h1.welcome{
     color: #FFF;
-    padding: 15px 8px;
+    line-height: .8em;
+    padding: 0px 8px;
     text-align: center;
 }
 section.content-slider h1.welcome span{
@@ -181,6 +202,9 @@ footer p.copy{
     text-align: center;
     width: 100%;
 }
+
+#loginModal{}
+#loginModal .modal-dialog{ width: 300px; }
 
 /*section.content-slider
 section.content-slider*/

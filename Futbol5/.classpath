@@ -5,7 +5,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/Luis Guerrero/eclipse-workspace/futbol5/assets/jar/mysql-connector-java-5.1.23-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Luis Guerrero/eclipse-workspace/futbol5/assets/jar/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/lwarrior/eclipse/jar/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/lwarrior/eclipse/jar/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/lwarrior/eclipse/workspace/futbol5/assets/jar/gson-2.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

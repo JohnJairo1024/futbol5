@@ -73,7 +73,7 @@
 				%>
 				<li>
 					<h4><%=aux.getNombre()%></h4>
-					<img src="<%=aux.getPoster()%>" alt="" onerror="checkImage(this)">
+					<img src="<%=aux.getPoster()%>" alt="">
 					<hr>
 					<p><%=aux.getUbicacion()%></p>
 					<a id="reserva" href="reserva.jsp?id=<%=aux.getIdCancha()%>" class="button">Reservar</a>
