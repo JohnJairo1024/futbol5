@@ -1,6 +1,6 @@
 // JavaScript Document
 jQuery.fn.fancy=function(){
-$(this).live('click',function(e) {
+$(this).on('click',function(e) {
 if (!$('#popup1').length)
 {
 $('body').append('<div id="fancy1" style="z-index:10000;position: absolute; top:0px;background-color:#000;opacity:0.75; width:100%; height:100%;"></div>');

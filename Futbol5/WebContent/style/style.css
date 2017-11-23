@@ -17,7 +17,7 @@ header .navbar .collapse{
     margin: 15px 0 0;
 }
 header .navbar .logo{
-    width: 80px;
+    width: 70px;
 }
 
 .navbar-toggle{ border-color: #007576; margin: 16px 15px 0; }
@@ -28,6 +28,9 @@ header .navbar .logo{
 
 section.content-slider{
     background-color: #007576;
+    border-bottom: 2px solid #333333;
+    border-top: 2px solid #333333;
+    margin-top: 15px;
     width: 100%;
 }
 section.content-slider h1.welcome{
@@ -39,7 +42,7 @@ section.content-slider h1.welcome span{
     font-size: .6em;
     font-weight: normal;
 }
-
+section.content-slider img{ width: 100%; }
 section.content-slider .flex-caption{
     background: rgba(0, 0, 0, .6);
     color: #FFF;
@@ -59,18 +62,15 @@ section.content-slider .flex-control-nav{
     right: 20px;
     height: 12px;
 }
-section.content-slider .flex-control-nav a{
-    background-color: #FFF;
-}
+section.content-slider .flex-control-nav a{ background-color: #FFF; }
 section.content-slider .flex-control-nav li{
     margin: 0 0 0 7px;
     padding: 0;
     display: inline-block;
     zoom: 1;
 }
-section.content-slider .flex-control-nav li:first-child{
-    margin: 0;
-}
+section.content-slider .flex-control-nav li:first-child{ margin: 0; }
+section.content-slider .flex-control-nav li a:hover, .flex-control-nav li a.active{ background: #000; }
 
 section.container{
     width: 100%;
@@ -94,33 +94,93 @@ section.container aside .intro h1{
     line-height: 26px;
     text-transform: uppercase;
 }
-section.container aside .intro p{
-    font-size: 12px;
-}
 section.container aside ul.soccer-fields{
+    display: flex;
     margin: 0 auto;
     padding: 0;
     text-align: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 section.container aside ul.soccer-fields li{
     background-color: #e6e6e6;
-    border-radius: 8px;
-    display: inline-block;
+    border-radius: 5px;
+    display: block;
+    float: left;
+    height: 360px;
     list-style: none;
     margin: 8px 1%;
     padding: 8px;
+    position: relative;
     width: 22%;
 }
 section.container aside ul.soccer-fields li img{
     display: block;
     margin: 5px auto;
+    outline: 1px solid #FFF;
     width: 90%;
 }
 section.container aside ul.soccer-fields li h4{
     color: #444;
+    text-transform: uppercase;
 }
-section.container aside ul.soccer-fields{}
+section.container aside ul.soccer-fields li a.button{
+    background: #3e3e3e;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#585858', endColorstr='#3e3e3e');
+    background: -webkit-gradient(linear, left top, left bottom, from(#585858), to(#3e3e3e));
+    background: -moz-linear-gradient(top, #585858, #3e3e3e);
+    bottom: 15px;
+	color: #FFF;
+	display: inline-block;
+    left: 50%;
+	margin: 5px 0 0 -40px;
+    padding: 8px 12px;
+    position: absolute;
+    text-decoration: none;
+    width: 80px;
+}
 
+section.container-map{
+    background-color: #007576;
+    border-bottom: 2px solid #333333;
+    border-top: 2px solid #333333;
+    height: 500px;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+}
+
+footer{
+    color: #333333;
+    padding: 15px 0 0;
+    width: 100%;
+}
+footer aside{
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 100%;
+}
+footer aside h4{ text-align: center; }
+footer aside ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+footer aside ul li{ display: inline-block; }
+footer aside ul li span{
+    height: 27px;
+    width: 27px;
+    display: inline-block;
+}
+
+footer p.copy{
+    background-color: #FFF;
+    color: #333333;
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+}
 
 /*section.content-slider
 section.content-slider*/
@@ -130,15 +190,19 @@ section.content-slider*/
     header .navbar .collapse{
         float: inherit;
     }
+    header .navbar .collapse ul li{
+        border-bottom: 1px solid #333;
+    }
     header .navbar .logo{
         width: 50px;
     }
     section.content-slider h1.welcome{
-        font-size: 2em;
-        padding: 8px;
+        font-size: 1.5em;
+        margin: 5px 0;
+        padding: 0;
     }
     section.content-slider h1.welcome span{
-        font-size: .6em;
+        font-size: .8em;
     }
     section.content-slider .flex-control-nav{
         bottom: 18px;
@@ -148,5 +212,13 @@ section.content-slider*/
     }
     section.content-slider .flex-caption h1{
         margin: 0;
+    }
+
+    section.container aside{
+        padding: 20px 0;
+    }
+    section.container aside ul.soccer-fields li{
+        margin: 8px 1%;
+        width: 45%;
     }
 }

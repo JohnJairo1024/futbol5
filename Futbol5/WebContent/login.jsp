@@ -2,11 +2,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Documento sin t�tulo</title>
-        <link href="css/style_window.css" rel="stylesheet" type="text/css"/>
-         <script type="text/javascript" src="js/jquery.min.js"></script>
-         <script type="text/javascript" src="js/jquery.form.js"></script>
-         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-         <script type="text/javascript" src="js/error.js"></script>
+        <link href="style/style_window.css" rel="stylesheet" type="text/css"/>
+         <script type="text/javascript" src="javascript/jquery.min.js"></script>
+         <script type="text/javascript" src="javascript/jquery.form.js"></script>
+         <script type="text/javascript" src="javascript/jquery.validate.min.js"></script>
+         <script type="text/javascript" src="javascript/error.js"></script>
     </head>
    
 

@@ -7,14 +7,20 @@
 	<title>PisoClub</title>
 
 	<link type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link id="flexslider-css-css" media="screen, all" type="text/css" href="css/flexslider.css?ver=3.4.2" rel="stylesheet" />
-	<link type="text/css" href="css/style.css" rel="stylesheet" />
+	<link id="flexslider-css-css" media="screen, all" type="text/css" href="style/flexslider.css?ver=3.4.2" rel="stylesheet" />
+	<link type="text/css" href="style/style.css" rel="stylesheet" />
 
 	<style>
 	#map {
 		height: 100%;
 	}
 	</style>
+
+	<script>
+		function checkImage(e){
+			jQuery(e).attr("src","http://via.placeholder.com/120x120");
+		};
+	</script>
 
 </head>
 <body>
