@@ -2,4 +2,5 @@ Futbol5/.classpath
 Futbol5/.settings/org.eclipse.wst.common.component
 Futbol5/.settings/org.eclipse.wst.common.project.facet.core.xml
 Futbol5/build
+Futbol5/src/Datos/Futbol5BD.java
 .DS_Store

@@ -1,3 +1,14 @@
+<jsp:useBean id="oEspectador" class="Entidades.Usuario" scope="session"/>
+<jsp:setProperty name="Espectador" property="usuario" value="" />
+<%@page import="java.util.Enumeration"%>
+<%@page import="java.util.Hashtable"%>
+<%@page import="com.google.gson.Gson"%>
+<%
+	HttpSession sesion = request.getSession();
+	Object user = sesion.getAttribute("Logueado");
+	//out.print( new Gson().toJson(user) );
+	//out.print( new Gson().toJson(oEspectador) );
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +47,16 @@
 					</button>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      	<ul class="nav navbar-nav">
-						<li><a href="#">Nosotros</a></li>
+			      	<ul class="nav navbar-nav">						
+						<% if( oEspectador.getIdEspectador() == 0 ){ %>
+						<li><a href="http://pisoclub.com/empresa/nosotros.html" target="_new">Nosotros</a></li>
 						<li><a class="btn-login" href="#">Ingresar</a></li>
-						<li><a href="#">Registrarme</a></li>
+						<li><a class="btn-registro" href="#">Registrarme</a></li>
+						<% } else { %>
+						<li><p>Bienvenido <% out.print( oEspectador.getNombre() + " " + oEspectador.getApellido() ); %></p></li>
+						<li><a href="http://pisoclub.com/empresa/nosotros.html" target="_new">Nosotros</a></li>
+						<li><a href="Logout.jsp">Salir</a></li>
+						<% } %>
 			      	</ul>
 			    </div>
 		  	</div>

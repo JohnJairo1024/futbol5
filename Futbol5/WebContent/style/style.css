@@ -43,6 +43,7 @@ header .navbar .logo{
 .navbar-toggle{ border-color: #007576; margin: 16px 15px 0; }
 .navbar-toggle .icon-bar{ background: #007576; }
 .navbar-collapse ul li a{ color: #007576; }
+.navbar-collapse ul li p{ padding: 15px 5px 0; }
 .navbar-collapse ul li a.active{ background: #007576; color: #FFF; }
 
 
@@ -203,8 +204,10 @@ footer p.copy{
     width: 100%;
 }
 
-#loginModal{}
-#loginModal .modal-dialog{ width: 300px; }
+#loginModal, #registroModal{ background: rgba(0,0,0,.9); }
+#loginModal .modal-dialog{ width: 300px; margin-top: 10%; }
+#registroModal .modal-dialog{ width: 300px; margin-top: 10%; }
+.error-message{ color: #F00; }
 
 /*section.content-slider
 section.content-slider*/

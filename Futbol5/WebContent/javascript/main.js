@@ -1,3 +1,5 @@
+var $btn;
+
 var ajax = function(urlFragment, data) {
   jQuery("#loader").fadeIn("slow");
 	var req = $.ajax({
@@ -25,6 +27,15 @@ var ajax = function(urlFragment, data) {
 
 }, closePopup = function(){
     jQuery('.popup').fadeOut();
+}, messageError = function( msg ){
+	jQuery('.error-message').fadeIn('fast', function(){
+		setTimeout(function(){
+			jQuery('.error-message').fadeOut('slow');
+			if( $btn!=undefined ){
+				$btn.button('reset');
+			}
+		}, 3000);
+	}).html( msg );
 };
 
 jQuery( ".soccer-fields img" ).bind('error', function() {
@@ -36,12 +47,24 @@ jQuery(document).ready(function () {
 
 	jQuery('.btn-login').on('click', function(e){
 		e.preventDefault();
-		jQuery('#loginModal').modal();
+		jQuery('#loginModal').modal({
+			backdrop: false,
+			keyboard: false
+		});
+	});
+	
+	jQuery('.btn-registro').on('click', function(e){
+		e.preventDefault();
+		jQuery('#registroModal').modal({
+			backdrop: false,
+			keyboard: false
+		});
 	});
 	
 	// Submit a form via ajax
     jQuery('.btn-submit').on('click', function(e) {
-      e.preventDefault();
+      e.preventDefault();      
        ajaxForm(jQuery(this).closest('form'));
+       $btn = $(this).button('loading');       
     });
 });

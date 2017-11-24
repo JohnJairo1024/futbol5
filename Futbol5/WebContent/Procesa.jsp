@@ -6,60 +6,110 @@
 <%@page import="java.util.*"%>
 
 <jsp:useBean id="oEspectador" class="Entidades.Usuario" scope="session"/>
-
-<jsp:setProperty name="oEspectador" property="usuario" value="<%=request.getParameter(\"Usuario\")%>"/>
-<jsp:setProperty name="oEspectador" property="password" value="<%=request.getParameter(\"Password\")%>"/>
+<jsp:useBean id="oUsuario" class="Entidades.Usuario" scope="page"/>
 
 <%
-	
+	String username, userpassword, nombre, apellido, dni;
 	String method = request.getParameter("method");
-	Gson gson = new Gson();
 	Map<String, String> respuesta = new HashMap<String, String>();
-	//String respuesta[] = new String[5];	
+	DatosUsuario oDatosEspectador;
+	oDatosEspectador = new DatosUsuario();
+	Usuario aux = null;
 	
 	if( method.equals("login") ){
-		String username = request.getParameter("Usuario");
+		username = request.getParameter("Usuario");
+		userpassword = request.getParameter("Password");
 		
-		DatosUsuario oDatosEspectador;
-	    Usuario aux = null;
+		if( !username.equals("") && !userpassword.equals("") ){		    
+		    
+		    try
+		    {
+		        aux = oDatosEspectador.Login(username, userpassword);
+		
+		        if (aux != null)
+		        {
+		            oEspectador.setIdEspectador(aux.getIdEspectador());
+		            oEspectador.setNombre(aux.getNombre());
+		            oEspectador.setApellido(aux.getApellido());
+		            oEspectador.setDNI(aux.getDNI());
+		            oEspectador.setUsuario(aux.getUsuario());
+		            oEspectador.setTipo(aux.getTipo());
+		            HttpSession sesion = request.getSession();
+		            sesion.setAttribute("Logueado", oEspectador);
+		
+		            respuesta.put("event","location.reload();");
+		        }
+		        else
+		        {
+		        	respuesta.put("event","messageError('Usuario o contraseña incorrectos.');");		            
+		        }
+		    }
+		    catch (Exception ex)
+		    {
+		        
+		    }
+			
+		} else {
+			respuesta.put("event","messageError('Todos los campos son requeridos');");
+		}
+		
 	
-	    oDatosEspectador = new DatosUsuario();
-	    
-	    try
-	    {
-	        aux = oDatosEspectador.Login(oEspectador.getUsuario(), oEspectador.getPassword());
-	
-	        if (aux != null)
-	        {
-	            oEspectador.setIdEspectador(aux.getIdEspectador());
-	            oEspectador.setNombre(aux.getNombre());
-	            oEspectador.setApellido(aux.getApellido());
-	            oEspectador.setDNI(aux.getDNI());
-	            oEspectador.setUsuario(aux.getUsuario());
-	            oEspectador.setTipo(aux.getTipo());
-	            HttpSession sesion = request.getSession();
-	            sesion.setAttribute("Logueado", oEspectador);
-	
-	        %><script>setTimeout(function(){$('#popup1').fadeOut(2000);$('#fancy1').fadeOut(3000)} , 000); $('#userLogueado').text('Usuario: <%=oEspectador.getUsuario() %>');$('#salir').text('Salir');$('#login').hide();$('#registrarme').hide();$('#reservas').show();</script>
-	          
-	
-	        <%
-	        }
-	        else
-	        {
-	            %><script>setTimeout(function(){$('#errorLogin').fadeOut(2000);} , 000)</script><p id="errorLogin" style="color: red;  font-size: 12px;   margin-left: 77px;    margin-top: -80px;">Usuario o password incorrectos.</p><%
-	            oDatosEspectador.Desconectar();
-	            
-	        }
-	    }
-	    catch (Exception ex)
-	    {
-	        
-	    }
+	} else if( method.equals("registro") ){
+		username = request.getParameter("Usuario");
+		userpassword = request.getParameter("Password");
+		nombre = request.getParameter("nombre");
+		apellido = request.getParameter("apellido");
+		dni = request.getParameter("dni");
+		
+		if( !username.equals("") && !userpassword.equals("") && !nombre.equals("") && !apellido.equals("") && !dni.equals("") ){
+			Usuario registrado = oDatosEspectador.BuscarEspectadorNombreUsuario(username);
+			
+			if (registrado==null)
+		    {
+				oUsuario.setUsuario(username);
+				oUsuario.setNombre(nombre);
+				oUsuario.setApellido(apellido);
+				oUsuario.setDNI(dni);
+				oUsuario.setPassword(userpassword);
+				oUsuario.setTipo("Usuario");
+				
+		        try
+		        {
+		        	//Guarda usuario
+		            oDatosEspectador.AgregarEspectador(oUsuario);
+		            
+		        	//Loguea Usuario
+		            aux = oDatosEspectador.Login(username, userpassword);
+		            oEspectador.setIdEspectador(aux.getIdEspectador());
+		            oEspectador.setNombre(aux.getNombre());
+		            oEspectador.setApellido(aux.getApellido());
+		            oEspectador.setDNI(aux.getDNI());
+		            oEspectador.setUsuario(aux.getUsuario());
+		            oEspectador.setTipo(aux.getTipo());
+		            HttpSession sesion = request.getSession();
+		            sesion.setAttribute("Logueado", oEspectador);
+		            
+		            respuesta.put("event","messageError('Usuario registardo satisfactoriamente.'); setTimeout(function(){ location.reload(); },2000);");
+		        }
+		        catch(Exception ex)
+		        {
+		            
+		        }
+		    }
+		    else
+		    {
+		    	respuesta.put("event","messageError('Usuario registrado, vuelva a intentarlo.');");
+		    }
+			
+		} else {
+			respuesta.put("event","messageError('Todos los campos son requeridos');");
+		}
+		
+		
 	} else {
-		respuesta.put("event","alert('Error')");		
+		respuesta.put("event","messageError('Error de metodo');");		
 	}
 	
-	out.print(gson.toJson(respuesta));
-	    
+	String res = new Gson().toJson(respuesta);
+	out.print( res );    
 %>

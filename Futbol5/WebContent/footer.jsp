@@ -40,7 +40,7 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title">Iniciar sesión</h4>
 				</div>
-				<form id	="login2">
+				<form id="login">
 					<div class="modal-body">					
 					  <div class="form-group">
 					    <label for="Usuario" class="control-label">Usuario:</label>
@@ -49,7 +49,51 @@
 					  <div class="form-group">
 					    <label for="password" class="control-label">Password:</label>
 					    <input type="password" class="form-control longinput required" id="password" name="Password">
-					  </div>					
+					  </div>
+					  <div class="form-group">
+					  	<p class="error-message"></p>
+					  </div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-submit">Continuar</button>
+					</div>
+				</form>					
+		    </div>
+	  	</div>
+	</div>
+	
+	<div class="modal fade" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="registroModalLabel">
+	  	<div class="modal-dialog" role="document">
+		    <div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Iniciar sesión</h4>
+				</div>
+				<form id="registro">
+					<div class="modal-body">					
+					  <div class="form-group">
+					    <label for="Usuario" class="control-label">Usuario:</label>
+					    <input type="text" class="form-control required" id="Usuario" name="Usuario">
+					  </div>
+					  <div class="form-group">
+					    <label for="password" class="control-label">Password:</label>
+					    <input type="password" class="form-control required" id="password" name="Password">
+					  </div>
+					  <div class="form-group">
+					    <label for="nombre" class="control-label">Nombre:</label>
+					    <input type="text" class="form-control required" id="nombre" name="nombre">
+					  </div>
+					  <div class="form-group">
+					    <label for="apellido" class="control-label">Apellido:</label>
+					    <input type="text" class="form-control required" id="apellido" name="apellido">
+					  </div>
+					  <div class="form-group">
+					    <label for="dni" class="control-label">DNI:</label>
+					    <input type="text" class="form-control required" id="dni" name="dni">
+					  </div>
+					  <div class="form-group">
+					  	<p class="error-message"></p>
+					  </div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-submit">Continuar</button>
