@@ -8,70 +8,49 @@
 <%@page session="true" %>
 <%@include file="Validacion.jsp" %>
 
-<link href="css/style_window.css" rel="stylesheet" type="text/css"/>
-<link href="css/reserva.css" rel="stylesheet" type="text/css"/>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="js/jquery.form.js" type="text/javascript"></script>
-<script src="js/plugins/jquery.smartWizard-2.0.min.js" type="text/javascript"></script>
-
-
 <%
     DatosReservas oDatosReservas = new DatosReservas();
     Hashtable oListaReservas = oDatosReservas.ListarReservasEspectador(oEspectador);
     Enumeration eLista = oListaReservas.elements();
 %>
 
-
-<div id="popup3">
-    <div style="margin:0;" class="maincontent">
-        <div class="maincontentinner">
-            <div class="content1">
-                <div class="contenttitle">
-                    <h2 id="default" class="form"><span>Lista de mis reservas</span></h2>
-                </div>
-                <div class="content" style="height: 400px; overflow: auto">
-                    <table cellspacing="0" cellpadding="0" border="0" class="stdtable stdtablecb" id="table2">
-                        <colgroup>
-                            <col class="con1">
-                            <col class="con0">
-                            <col class="con1">
-                            <col class="con0">
-                            <col class="con1">
-                            <col class="con0">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th class="head0">Nombre de reserva</th>
-                                <th class="head1">Sede</th>
-                                <th class="head0">Cancha</th>
-                                <th class="head1">Horario</th>
-                                <th class="head0">Fecha</th>
-                                <th class="head1">Precio</th>
-                            </tr>
-                        </thead>   
-
-                        <tbody>                             
-                            <% while (eLista.hasMoreElements()) {
-                                    Reserva aux = (Reserva) eLista.nextElement();
-                            %> 
-                            <tr id="tr">
-                                <td><%=aux.getNombre()%></td> 
-                                <td><%=aux.getoFuncion().getoSede().getNombre()%></td>
-                                <td><%=aux.getoFuncion().getoCancha().getNombre()%></td>
-                                <td><%=aux.getoFuncion().getoHorario().getHorario()%></td>
-                                <td><%=aux.getoFuncion().getFecha()%></td>
-                                <td><%=aux.getPrecio()%></td>
-                            </tr> 
-                            <%}%>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
+<jsp:include page="header.jsp" />
+	<section class="content-slider">
+		<img src="images/slide1.jpg" alt="" class="banner">
+	</section>
+	
+	<section class="container">
+		<aside>
+			<h1 class="txt-center">Mis Reservas</h1>
+			<div class="table-responsive">
+				<table cellspacing="0" cellpadding="0" border="0" class="table table-bordered">
+		            <thead>
+		                <tr>
+		                    <th>Nombre de reserva</th>
+							<th>Sede</th>
+							<th>Cancha</th>
+							<th>Horario</th>
+							<th>Fecha</th>
+							<th>Precio</th>
+		                </tr>
+		            </thead>
+		            <tbody>                             
+		                <% while (eLista.hasMoreElements()) {
+		                        Reserva aux = (Reserva) eLista.nextElement();
+		                %> 
+		                <tr>
+		                    <td><%=aux.getNombre()%></td> 
+		                    <td><%=aux.getoFuncion().getoSede().getNombre()%></td>
+		                    <td><%=aux.getoFuncion().getoCancha().getNombre()%></td>
+		                    <td><%=aux.getoFuncion().getoHorario().getHorario()%></td>
+		                    <td><%=aux.getoFuncion().getFecha()%></td>
+		                    <td><%=aux.getPrecio()%></td>
+		                </tr> 
+		                <%}%>
+		            </tbody>
+		        </table>
+			</div>
+		</aside>
+	</section>
+	
+<jsp:include page="footer.jsp" />

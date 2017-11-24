@@ -36,6 +36,13 @@ var ajax = function(urlFragment, data) {
 			}
 		}, 3000);
 	}).html( msg );
+}, showStepTwo = function( content ){
+	jQuery('#fieldsReserv').html( content );
+	jQuery('.step-1').fadeOut('slow', function(){
+		jQuery('.step-2').fadeIn();
+		jQuery('.icon-steps li').removeClass('active');
+		jQuery('.icon-steps li:eq(1)').addClass('active');
+	});
 };
 
 jQuery( ".soccer-fields img" ).bind('error', function() {
@@ -67,4 +74,14 @@ jQuery(document).ready(function () {
        ajaxForm(jQuery(this).closest('form'));
        $btn = $(this).button('loading');       
     });
+    
+    if( jQuery('.page-reserva').length > 0 ){
+    		jQuery('.step-1 .click').on('click', function(){
+    			ajax('Procesa.jsp?method=getfield', {
+    				id: jQuery(this).attr('data-field'),
+    				idSede: jQuery(this).attr('data-sede'),
+    				idFuncion: jQuery(this).attr('data-function')
+    			});
+    		});
+    }
 });

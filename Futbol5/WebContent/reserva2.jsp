@@ -20,84 +20,35 @@
             String genero = "titulo";
 %>
 
-<jsp:include page="header.jsp" />
-	<section class="content-slider">
-		<img src="images/slide1.jpg" alt="" class="banner">
-	</section>
-	
-	<section class="container page-reserva">
-		<aside>
-		<h1 class="txt-center">LLene el formulario para hacer una reserva</h1>
-		
-		<ul class="icon-steps">
-			<li class="active">	<span>1</span> <br>SELECCIONAR SEDE</li>
-			<li>	<span>2</span> <br>SELECCIONAR CANCHA</li>
-			<li>	<span>3</span> <br>CONFIRMAR RESERVA</li>
-		</ul>	
-	
-		<div class="step-1">
-			<h2>Listado de Sedes</h2>
-			<div class="table-responsive">
-				<table cellspacing="0" cellpadding="0" border="0" class="table table-bordered">
-		            <thead>
-		                <tr>
-		                    <th>Sede</th>
-							<th>Cancha</th>
-							<th>Horario</th>
-							<th>Fecha</th>
-							<th>Precio</th>
-		                </tr>
-		            </thead>   
-		            <tbody>                             
-		                <% while (eFunciones.hasMoreElements()) {
-                             Funcion aux = (Funcion) eFunciones.nextElement();
-                             filas = aux.getoSede().getZona();
-                             butacas = aux.getoSede().getPunto();
-                             titulo = aux.getoCancha().getNombre();
-                             poster = aux.getoCancha().getPoster();
-                             descripcion = aux.getoCancha().getDescripcion();
-                             genero = aux.getoCancha().getUbicacion();
-	                    %>
-	                    <tr class="click" data-sede="<%= aux.getoSede().getIdSede()%>" data-function="<%= aux.getIdFuncion()%>" data-field="<%= idCancha%>">
-	                        <td><%=aux.getoSede().getNombre()%></td>
-	                        <td><%=aux.getoCancha().getNombre()%></td> 
-	                        <td><%=aux.getoHorario().getHorario()%></td> 
-	                        <td><%=aux.getFecha()%></td>
-	                        <td><%=aux.getoHorario().getPrecio()%></td>
-	                    </tr> 
-	                    <%}%>
-		            </tbody>
-		        </table>
-			</div>
-		</div>
-		
-		<div class="step-2">
-			<h2>Selección de cancha</h2>
-			<div class="table-responsive" id="fieldsReserv"></div>
-		</div>
-		
-		<div class="step-3">
-			<h2>Reserve</h2>
-			<div class="table-responsive">
-			</div>
-			<form action="">
-				<input type="hidden" name="" />
-			</form>
-		</div>
-		
-		
+<link href="resources/style/style_window.css" rel="stylesheet" type="text/css"/>
+<link href="resources/style/reserva.css" rel="stylesheet" type="text/css"/>
+<script src="resources/javascript/jquery.min.js"></script>
+<script src="resources/javascript/jquery.form.js" type="text/javascript"></script>
+<script src="resources/javascript/plugins/jquery.smartWizard-2.0.min.js" type="text/javascript"></script>
+
 <div id="popup2">
     <div class="maincontent" style="margin:0; width: 0px; height: 0px;">
         <div class="maincontentinner">
             <div class="content1">
+                <div class="contenttitle">
+                    <h2 class="form" id="default"><span>LLene el formulario para hacer una reserva</span></h2>
+                </div>
+                <br />
+                <br />
                 <form  method="post"  id="formAjaxSala" action="ajaxSede.jsp" class="stdform stdform2" style="position:relative; height:600px !important">
 
                     <div class="wizard" id="wizard">
-
+                        <ul class="hormenu">
+                            <li> <a href="#wiz1step1"> <span class="h2">PASO 1</span> <span class="dot"><span></span></span> <span class="label">SELECCIONAR SEDE</span> </a> </li>
+                            <li> <a href="#wiz1step2"> <span class="h2">PASO 2</span> <span class="dot"><span></span></span> <span class="label">SELECCIONAR CANCHA</span> </a> </li>
+                            <li> <a href="#wiz1step3"> <span class="h2">PASO 3</span> <span class="dot"><span></span></span> <span class="label">CONFIRMAR RESERVA</span> </a> </li>
+                        </ul>
                         <br clear="all">
                         <br>
                         <br>
                         <div class="formwiz" id="wiz1step1">
+                            <h2>PASO 1: ELEGIR SEDE</h2>
+                            <br>
                             <div class="content">
                                 <div class="maincontentinner">
                                     <div id="ajax"></div>
@@ -222,6 +173,7 @@
 
         </div>
     </div>
+    <img class="cargando" style="position:absolute; bottom: 20px;" src="images/loader7.gif "/>
 
 </div>
 <script>
@@ -315,7 +267,3 @@
     })
 </script>
 
-		</aside>
-	</section>
-
-<jsp:include page="footer.jsp" />

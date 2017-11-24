@@ -18,8 +18,8 @@
 	<title>PisoClub</title>
 
 	<link type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-	<link id="flexslider-css-css" media="screen, all" type="text/css" href="style/flexslider.css?ver=3.4.2" rel="stylesheet" />
-	<link type="text/css" href="style/style.css" rel="stylesheet" />
+	<link href="resources/style/flexslider.css?ver=3.4.2" rel="stylesheet" />
+	<link href="resources/style/style.css" rel="stylesheet" />
 
 	<style>
 	#map {
@@ -38,7 +38,7 @@
 		<nav class="navbar">
 		  	<div class="container-fluid">
 			    <div class="navbar-header">
-			      	<a class="navbar-brand" href="#"><img src="images/logo.png" alt="" class="logo"></a>
+			      	<a class="navbar-brand" href="index.jsp"><img src="images/logo.png" alt="" class="logo"></a>
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
@@ -54,6 +54,7 @@
 						<li><a class="btn-registro" href="#">Registrarme</a></li>
 						<% } else { %>
 						<li><p>Bienvenido <% out.print( oEspectador.getNombre() + " " + oEspectador.getApellido() ); %></p></li>
+						<li><a href="misreservas.jsp">Mis reservas</a></li>
 						<li><a href="http://pisoclub.com/empresa/nosotros.html" target="_new">Nosotros</a></li>
 						<li><a href="Logout.jsp">Salir</a></li>
 						<% } %>

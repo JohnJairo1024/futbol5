@@ -25,14 +25,6 @@
 
 	<div class="overlay popup"></div>
 
-	<div class="box-alert popup" id="generalAlert">
-		<a class="close" href="javascript:closePopup();">X</a>
-		<div class="box">
-			<h1 class="center" id="titleAlert"></h1>
-			<p id="messageAlert"></p>
-		</div>
-	</div>
-
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
 	  	<div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -103,17 +95,10 @@
 	  	</div>
 	</div>
 
-	<script type="text/javascript" src="javascript/jquery.js"></script>
+	<script type="text/javascript" src="resources/javascript/jquery.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="javascript/main.js"></script>
-	<script type="text/javascript" src="javascript/jquery.form.js" type="text/javascript"></script>
-	<script type="text/javascript" src="javascript/plugins/jquery.smartWizard-2.0.min.js"></script>
-	<script type="text/javascript" src="javascript/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="javascript/error.js"></script>
-	<script type="text/javascript" src="javascript/jquery.flexslider-min.js"></script>
-	<script type="text/javascript" src="javascript/fancy.js"></script>
-	<script type="text/javascript" src="javascript/function_wizard.js"></script>
-	<script type="text/javascript" src="javascript/fancyreservas.js"></script>
+	<script type="text/javascript" src="resources/javascript/main.js"></script>
+	<script type="text/javascript" src="resources/javascript/jquery.flexslider-min.js"></script>
 
 	<!-- Hook Flexslider -->
 	<script type="text/javascript">
@@ -128,20 +113,6 @@
 
 			});
 
-			$(document).ready(function() {
-				$('#window').fancy();
-				$('#trailer').fancy();
-				$('#reserva').function_wizard();
-				$('#misreservas').fancyreservas();
-			})
-
-			$(document).ready(function() {
-				$('#salir').click(function(e) {
-					var url = $(this).attr('href');
-					$('#bodychild').load(url);
-					e.preventDefault();
-				})
-			});
 		}
 		cargaIndex();
 	</script>
