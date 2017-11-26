@@ -54,6 +54,7 @@
 						<li><a class="btn-registro" href="#">Registrarme</a></li>
 						<% } else { %>
 						<li><p>Bienvenido <% out.print( oEspectador.getNombre() + " " + oEspectador.getApellido() ); %></p></li>
+						<li><a href="index.jsp">Inicio</a></li>
 						<li><a href="misreservas.jsp">Mis reservas</a></li>
 						<li><a href="http://pisoclub.com/empresa/nosotros.html" target="_new">Nosotros</a></li>
 						<li><a href="Logout.jsp">Salir</a></li>

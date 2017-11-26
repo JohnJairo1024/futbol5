@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.btn{ background-color: #007576; color: #FFF; border-radius: 5px; margin: 0 5px; }
+.btn, .btn:hover, .btn.active, .btn:focus { background-color: #007576; color: #FFF; border-radius: 5px; margin: 0 5px; }
 .btn-submit{ background-color: #007576; color: #FFF; }
 .btn-submit:hover, .btn-submit:active, .btn-submit:link, .btn-submit:focus{ color: #FFF; }
 .step-2, .step-3{ display: none; }
@@ -150,13 +150,8 @@ section.container aside ul.soccer-fields li h4{
     text-transform: uppercase;
 }
 section.container aside ul.soccer-fields li hr{ margin: 8px 0; }
-section.container aside ul.soccer-fields li a.button{
-    background: #3e3e3e;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#585858', endColorstr='#3e3e3e');
-    background: -webkit-gradient(linear, left top, left bottom, from(#585858), to(#3e3e3e));
-    background: -moz-linear-gradient(top, #585858, #3e3e3e);
-    bottom: 15px;
-	color: #FFF;
+section.container aside ul.soccer-fields li a.btn{
+    bottom: 15px;	
 	display: inline-block;
     left: 50%;
 	margin: 5px 0 0 -40px;

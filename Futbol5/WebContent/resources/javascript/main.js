@@ -77,9 +77,7 @@ var ajax = function(urlFragment, data) {
 	        $('#reservaAsientos').append('<input type="hidden" name="asientof'+valor+'"  value="'+fila+'" />');        	           	                    	        
 	    });
 	    jQuery("#detailhour").html(texto);
-    }
-    
-    console.log(asientos);
+    }    
     
     jQuery('#cantbutacas').attr("value",items.length);
     jQuery('.total').html( (items.length * parseInt( jQuery('.precio').html() ) ) );
@@ -90,6 +88,8 @@ var ajax = function(urlFragment, data) {
 	jQuery('.step-'+ step).fadeOut('fast', function(){
 		jQuery('.step-'+ (step-1)).fadeIn();
 	});
+	jQuery('.icon-steps li').removeClass('active');
+	jQuery('.icon-steps li:eq('+(step-2)+')').addClass('active');
 };
 
 jQuery( ".soccer-fields img" ).bind('error', function() {

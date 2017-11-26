@@ -27,25 +27,25 @@
 					<div id="slideritems" class="flexslider">
 						<ul class="slides">
 							<li>
-								<img src="images/slide1.jpg" alt="">
+								<img src="images/slide1.jpg?1" alt="">
 								<div class="flex-caption">
 									<h1>Sede Compensar</h1>
 								</div>
 							</li>
 							<li>
-								<img src="images/slide2.jpg" alt="">
+								<img src="images/slide2.jpg?1" alt="">
 								<div class="flex-caption">
 									<h1>Sede Norte</h1>
 								</div>
 							</li>
 							<li>
-								<img src="images/slide3.jpg" alt="">
+								<img src="images/slide3.jpg?1" alt="">
 								<div class="flex-caption">
 									<h1>Sede Sur</h1>
 								</div>
 							</li>
 							<li>
-								<img src="images/slide4.jpg" alt="">
+								<img src="images/slide4.jpg?1" alt="">
 								<div class="flex-caption">
 									<h1>Sede Americas</h1>
 								</div>
@@ -76,7 +76,7 @@
 					<img src="<%=aux.getPoster()%>" alt="">
 					<hr>
 					<p><%=aux.getUbicacion()%></p>
-					<a id="reserva" href="reserva.jsp?id=<%=aux.getIdCancha()%>" class="button">Reservar</a>
+					<a id="reserva" href="reserva.jsp?id=<%=aux.getIdCancha()%>" class="btn">Reservar</a>
 				</li>
 				<%
 					}
