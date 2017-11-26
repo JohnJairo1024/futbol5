@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class Futbol5BD {
 
-	private Connection Conexion;
+	private Connection Conexion = null;
 	private Statement Sentencia;
 	private ResultSet Resultado;
 
@@ -24,9 +24,17 @@ public class Futbol5BD {
 		return Conexion;
 	}
 
-	public void Conectar() throws SQLException, Exception {
-		Conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/futbol", "root", "root");
-		Conexion.setAutoCommit(false);
+	public void Conectar() throws SQLException, Exception {					
+	    try {
+	    	Conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/futbol", "root", "");
+			Conexion.setAutoCommit(false);
+	    }
+	    catch (Exception e) {
+	        //es mejor tener todo el stacktrace del error
+	        //no solo el mensaje
+	        //System.out.println(e);
+	        e.printStackTrace(System.out);
+	    }
 	}
 
 	public void Desconectar() {
@@ -34,6 +42,9 @@ public class Futbol5BD {
 			Conexion.setAutoCommit(true);
 			Conexion.close();
 		} catch (SQLException e) {
+			
+		} finally{				
+			
 		}
 	}
 

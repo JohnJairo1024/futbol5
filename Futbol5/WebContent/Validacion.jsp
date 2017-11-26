@@ -14,7 +14,7 @@
     if (sesion.isNew())
     {
         //request.getRequestDispatcher("login.jsp").forward(request, response);
-      	response.sendRedirect("login.jsp");
+      	response.sendRedirect("index.jsp");
         return;
     }
     

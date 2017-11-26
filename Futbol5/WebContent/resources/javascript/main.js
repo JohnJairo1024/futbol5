@@ -13,15 +13,21 @@ var ajax = function(urlFragment, data) {
 }, ajaxForm = function($form) {
 	ajax('Procesa.jsp?method=' + $form.attr('id'), $form.serialize());
 
-}, showAlert = function(title, msg, btnclose){
+}, showAlert = function(msg, btnclose){
+	
+	alert(msg);
+	
+	if( $btn!=undefined ){
+		$btn.button('reset');
+	}
+	return false;
     closePopup();
     jQuery('#generalAlert, .overlay').fadeIn('fast', function(){
         if( btnclose!=undefined ){
             jQuery('.close').fadeOut(0);
         }else{
             jQuery('.close').fadeIn(0);
-        }
-        jQuery('#titleAlert').html( title );
+        }        
         jQuery('#messageAlert').html( msg );
     });
 
@@ -42,6 +48,47 @@ var ajax = function(urlFragment, data) {
 		jQuery('.step-2').fadeIn();
 		jQuery('.icon-steps li').removeClass('active');
 		jQuery('.icon-steps li:eq(1)').addClass('active');
+	});
+}, lastStep = function(){
+		
+	var items = [];
+    var asientos=[];
+    $("input[name='columna']:checkbox:checked").each( function() {
+        items.push($(this));
+    });
+    
+    jQuery('#reservaAsientos').children().remove();
+    jQuery('#selectmostrartasientos').children().remove();
+    if( items.length > 0 ){    	
+	    jQuery('.step-2').fadeOut('slow', function(){
+			jQuery('.step-3').fadeIn();
+			jQuery('.icon-steps li').removeClass('active');
+			jQuery('.icon-steps li:eq(2)').addClass('active');
+		});
+	    
+	    var texto = "";
+	    $.each( items, function(i, l){	    	
+	        var columna=$(l).val();
+	        var fila=$(l).attr("id");
+	        texto += jQuery("#asientos th:eq("+ columna +")").html() + " " + jQuery("#asientos td.hour:eq("+ (fila-1) +")").html() + '<br>';	        
+	        valor=i+1;
+	        console.log( jQuery("#asientos th:eq("+ columna +")").html() );
+	        $('#reservaAsientos').append('<input type="hidden" name="asientoc'+valor+'"  value="'+columna+'" />');
+	        $('#reservaAsientos').append('<input type="hidden" name="asientof'+valor+'"  value="'+fila+'" />');        	           	                    	        
+	    });
+	    jQuery("#detailhour").html(texto);
+    }
+    
+    console.log(asientos);
+    
+    jQuery('#cantbutacas').attr("value",items.length);
+    jQuery('.total').html( (items.length * parseInt( jQuery('.precio').html() ) ) );
+    console.log(items);
+    return false;    
+    
+}, prevStep = function( step ){
+	jQuery('.step-'+ step).fadeOut('fast', function(){
+		jQuery('.step-'+ (step-1)).fadeIn();
 	});
 };
 
@@ -76,12 +123,25 @@ jQuery(document).ready(function () {
     });
     
     if( jQuery('.page-reserva').length > 0 ){
-    		jQuery('.step-1 .click').on('click', function(){
-    			ajax('Procesa.jsp?method=getfield', {
-    				id: jQuery(this).attr('data-field'),
-    				idSede: jQuery(this).attr('data-sede'),
-    				idFuncion: jQuery(this).attr('data-function')
-    			});
-    		});
+		jQuery('.step-1 .click').on('click', function(){
+			jQuery('#ReservaIdFucion').attr("value",jQuery(this).attr('data-function'));			
+			ajax('Procesa.jsp?method=getfield', {
+				id: jQuery(this).attr('data-field'),
+				idSede: jQuery(this).attr('data-sede'),
+				idFuncion: jQuery(this).attr('data-function')
+			});
+			
+			var html = '';
+			html += '<tr>';
+				html += '<td>' + jQuery(this).find('.sede').html() + '</td>';
+				html += '<td>' + jQuery(this).find('.cancha').html() + '</td>';
+				html += '<td class="precio">' + jQuery(this).find('.precio').html() + '</td>';
+				html += '<td class="total"></td>';
+			html += '</tr>';
+			
+			jQuery('#reserva-confimacion').html( html );
+			
+		});
+		  
     }
 });
