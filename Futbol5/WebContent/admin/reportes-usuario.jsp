@@ -52,7 +52,7 @@
                 {
             		Usuario auxGraf = (Usuario) eClientesGraf.nextElement();
 	            %>
-	            data.addRow(['<%=auxGraf.getNombre() %>', <%=auxGraf.getTotal() %>]); 
+	            data.addRow(['<%=auxGraf.getNombre() %> <%=auxGraf.getApellido() %>', <%=auxGraf.getTotal() %>]); 
 	            <%}%>
 		
 		        // Set chart options
