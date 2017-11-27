@@ -1,5 +1,4 @@
 <jsp:useBean id="oEspectador" class="Entidades.Usuario" scope="session"/>
-<jsp:setProperty name="Espectador" property="usuario" value="" />
 <%@page import="java.util.Enumeration"%>
 <%@page import="java.util.Hashtable"%>
 <%@page import="com.google.gson.Gson"%>

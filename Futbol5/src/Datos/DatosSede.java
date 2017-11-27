@@ -38,8 +38,7 @@ public class DatosSede extends Futbol5BD {
 	public Sede buscarSede(int IdSede) throws Exception {
 		Sede aux = null;
 		String sql = "SELECT * FROM sede WHERE IdSede = " + IdSede;
-		PreparedStatement s = CrearSentencia(sql);
-		System.out.println(sql);
+		PreparedStatement s = CrearSentencia(sql);		
 		ResultSet Resultado = Consultar(s);
 
 		while (Resultado.next()) {

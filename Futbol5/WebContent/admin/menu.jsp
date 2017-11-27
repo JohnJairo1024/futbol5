@@ -7,5 +7,6 @@
         <li><a href="reservas.jsp" class="charts"><span><em>Reservas</em></span></a></li>
         <li><a href="sede.jsp" class="tables"><span><em>Sede</em></span></a></li>
         <li><a href="horarios.jsp" class="charts"><span><em>Horarios</em></span></a></li>
+        <li><a href="reportes.jsp" class="charts"><span><em>Reportes</em></span></a></li>
     </ul>
 </div>

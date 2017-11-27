@@ -7,6 +7,7 @@ public class Cancha {
 	private String Ubicacion;
 	private String poster;
 	private int IdVideo;
+	private int Total;
 
 	public int getIdCancha() {
 		return IdCancha;
@@ -55,6 +56,14 @@ public class Cancha {
 	public void setIdVideo(int IdVideo) {
 		this.IdVideo = IdVideo;
 	}
+	
+	public int getTotal() {
+		return Total;
+	}
+	
+	public void setTotal(int total) {
+		this.Total = total;
+	}
 
 	public Cancha() {
 
@@ -68,5 +77,16 @@ public class Cancha {
 		setUbicacion(Ubicacion);
 		setPoster(poster);
 		setIdVideo(Idvideo);
+	}
+	
+	public Cancha(int IdCancha, String Nombre, String Descripcion,
+			String Ubicacion, String poster, int Idvideo, int total) {
+		setIdCancha(IdCancha);
+		setNombre(Nombre);
+		setDescripcion(Descripcion);
+		setUbicacion(Ubicacion);
+		setPoster(poster);
+		setIdVideo(Idvideo);
+		setTotal(total);
 	}
 }

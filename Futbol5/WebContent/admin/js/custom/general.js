@@ -2,6 +2,8 @@ jQuery.noConflict();
 
 jQuery(document).ready(function(){
 	
+	jQuery('.datetimepicker').datepicker({dateFormat:'yy-mm-dd'});
+	
 	//search box of header
 	jQuery('#keyword').bind('focusin focusout', function(e){
 		var t = jQuery(this);

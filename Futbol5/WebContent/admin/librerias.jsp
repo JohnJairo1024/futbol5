@@ -1,6 +1,5 @@
 <title>...::: Cancha:::...</title>
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-
+<link type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <!--[if IE 9]>
     <link rel="stylesheet" media="screen" href="css/ie9.css"/>
@@ -16,5 +15,3 @@
 <script type="text/javascript" src="js/plugins/jquery-1.7.min.js"></script>
 <script type="text/javascript" src="js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="js/custom/general.js"></script>
-
-

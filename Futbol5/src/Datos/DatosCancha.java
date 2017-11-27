@@ -104,4 +104,31 @@ public class DatosCancha extends Futbol5BD
 
         return ListaRTA;
     }
+    
+    public Hashtable ListarCanchaReporte(String fechaIni, String fechaFinal) throws SQLException, ClassNotFoundException, Exception
+    {
+        Hashtable ListaRTA = new Hashtable();
+        Cancha aux = null;
+        String sql = "SELECT c.IdCancha, c.Nombre, c.Descripcion, c.Ubicacion, c.Imagen, c.IdVideo, count(c.IdCancha) AS total " + 
+        		"FROM cancha c " + 
+        		"INNER JOIN reservas r ON r.IdCancha = c.IdCancha " +
+        		"WHERE r.FechaReserva BETWEEN '" + fechaIni +"' AND '" + fechaFinal +"' " +
+        		"GROUP BY c.IdCancha " + 
+        		"ORDER BY 7 DESC";
+        Conectar();
+        System.out.println(sql);
+        PreparedStatement s = CrearSentencia(sql);
+        ResultSet Resultado = Consultar(s);        
+        
+        System.out.println(Resultado);
+        while (Resultado.next())
+        {
+            aux = new Cancha(Resultado.getInt("IdCancha"), Resultado.getString("Nombre"), Resultado.getString("Descripcion"), Resultado.getString("Ubicacion"), Resultado.getString("Imagen"), Resultado.getInt("IdVideo"), Resultado.getInt("total"));
+            ListaRTA.put(aux.getIdCancha(), aux);
+        }
+        
+        Desconectar();
+
+        return ListaRTA;
+    } 
 }
