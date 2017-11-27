@@ -336,7 +336,7 @@ li{
 .leftmenu ul li .menutip ul li a { color: #333; width: auto; }
 .leftmenu ul li .menutip ul li a span { display: block; background: #fff; }
 
-.leftmenu ul li ul { margin: 0 0 10px 36px; display: none; }
+.leftmenu ul li ul { margin: 0 0 10px 36px; display: block !important; }
 .leftmenu ul li ul li:first-child a { border-top: 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; }
 .leftmenu ul li ul li:last-child a { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; }
 .leftmenu ul li ul li a { padding-left: 0; background: #f7f7f7; }
@@ -399,6 +399,7 @@ li{
 	-moz-box-shadow: 1px 1px 2px #eee; -webkit-box-shadow: 1px 1px 2px #eee; box-shadow: 1px 1px 2px #eee;
         margin-bottom: 20px;
         clear: both;
+	overflow: auto;
 }
 
 .contenttitle { background: #222; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }

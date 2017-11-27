@@ -47,7 +47,6 @@
                                         <col class="con0">
                                         <col class="con1">
                                         <col class="con0">
-                                        <col class="con1">
                                         <col class="con0">
                                         <col class="con1">
                                         <col class="con0">
@@ -58,7 +57,6 @@
                                             <th class="head1">Usuario</th>
                                             <th class="head0">Password</th>
                                             <th class="head1">Nombre</th>
-                                            <th class="head0">Apellido</th>
                                             <th class="head1">DNI</th>
                                             <th class="head0">Tipo</th>
                                             <th class="head1">Opciones</th>
@@ -72,7 +70,6 @@
                                         <tr>
                                             <td><%=aux.getIdEspectador()%></td>
                                             <td><%=aux.getUsuario()%></td>
-                                            <td><%=aux.getPassword()%></td>
                                             <td><%=aux.getNombre()%></td>
                                             <td><%=aux.getApellido()%></td>
                                             <td><%=aux.getDNI()%></td>

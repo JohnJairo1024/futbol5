@@ -10,6 +10,7 @@ public class Usuario
     private String Usuario;
     private String Password;
     private String Tipo;
+    private int Total;
 
     public int getIdEspectador()
     {
@@ -79,10 +80,27 @@ public class Usuario
     public void setTipo(String Tipo)
     {
         this.Tipo = Tipo;
-    }   
+    }  
+    
+    public int getTotal() {
+		return Total;
+	}
+	
+	public void setTotal(int total) {
+		this.Total = total;
+	}
 
     public Usuario()
     {
+    }
+    
+    public Usuario(int IdEspectador, String Nombre, String Apellido, String DNI, int Total)
+    {
+    		setIdEspectador(IdEspectador);
+    		setNombre(Nombre);
+        setApellido(Apellido);
+        setDNI(DNI);      
+        setTotal(Total);
     }
 
     public Usuario(String Usuario, String Password, String Nombre, String Apellido, String DNI, String Tipo)

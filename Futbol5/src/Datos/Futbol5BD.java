@@ -26,7 +26,7 @@ public class Futbol5BD {
 
 	public void Conectar() throws SQLException, Exception {					
 	    try {
-	    	Conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/futbol", "root", "");
+	    	Conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/futbol", "root", "root");
 			Conexion.setAutoCommit(false);
 	    }
 	    catch (Exception e) {

@@ -6,27 +6,27 @@
 <%  
     HttpSession sesion = request.getSession();
 
-    if (oAdmin == null) 
-    {
-        response.sendRedirect("index.jsp");
-    }
+//     if (oAdmin == null) 
+//     {
+//         response.sendRedirect("index.jsp");
+//     }
     
-    if (sesion.isNew())
-    {
-        response.sendRedirect("index.jsp");
-        return;
-    }
+//     if (sesion.isNew())
+//     {
+//         response.sendRedirect("index.jsp");
+//         return;
+//     }
     
-    if (sesion == null)
-    {
-        response.sendRedirect("index.jsp");
-    }
-    else
-    {
-        if (sesion.getAttribute("Logueado") == null)
-        {
-            response.sendRedirect("index.jsp");
-        }
-    }
+//     if (sesion == null)
+//     {
+//         response.sendRedirect("index.jsp");
+//     }
+//     else
+//     {
+//         if (sesion.getAttribute("Logueado") == null)
+//         {
+//             response.sendRedirect("index.jsp");
+//         }
+//     }
 %>
 

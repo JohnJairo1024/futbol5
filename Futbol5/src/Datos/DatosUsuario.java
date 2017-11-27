@@ -168,4 +168,34 @@ public class DatosUsuario extends Futbol5BD
 
         return ListaRTA;
     }
+    
+    public Hashtable ListarEspectadoresReporte(String fechaIni, String fechaFinal) throws SQLException, ClassNotFoundException, Exception
+    {
+        Hashtable ListaRTA = new Hashtable();
+        Usuario aux = null;
+        String sql = "SELECT u.IdUsuario, u.Nombre, u.Apellido, u.DNI, COUNT(u.IdUsuario) AS total " + 
+        		"FROM usuarios u " + 
+        		"LEFT JOIN reservas r ON r.IdUsuario = u.IdUsuario " + 
+        		"WHERE u.TipoUsuario = 'Usuario' AND u.estado = 1 " + 
+        		"	AND r.FechaReserva BETWEEN '" + fechaIni +"' AND '" + fechaFinal +"' " + 
+        		"GROUP BY u.IdUsuario " + 
+        		"ORDER BY 5 DESC";
+        Conectar();
+        System.out.println(sql);
+        PreparedStatement s = CrearSentencia(sql);
+        ResultSet Resultado = Consultar(s);
+        
+        
+        while (Resultado.next())
+        {
+            aux = new Usuario(Resultado.getInt("IdUsuario"), Resultado.getString("Nombre"), Resultado.getString("Apellido"), Resultado.getString("DNI"), Resultado.getInt("Total"));
+            ListaRTA.put(aux.getIdEspectador(), aux);
+        }
+        
+        Desconectar();
+
+        return ListaRTA;
+    }
+    
+    
 }
